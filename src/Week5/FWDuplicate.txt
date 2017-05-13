@@ -1,0 +1,48 @@
+ / *  
+   *   T o   c h a n g e   t h i s   l i c e n s e   h e a d e r ,   c h o o s e   L i c e n s e   H e a d e r s   i n   P r o j e c t   P r o p e r t i e s .  
+   *   T o   c h a n g e   t h i s   t e m p l a t e   f i l e ,   c h o o s e   T o o l s   |   T e m p l a t e s  
+   *   a n d   o p e n   t h e   t e m p l a t e   i n   t h e   e d i t o r .  
+   * /  
+ p a c k a g e   W e e k 5 ;  
+  
+ i m p o r t   j a v a . i o . F i l e N o t F o u n d E x c e p t i o n ;  
+ i m p o r t   j a v a . i o . F i l e R e a d e r ;  
+ i m p o r t   j a v a . i o . F i l e W r i t e r ;  
+ i m p o r t   j a v a . i o . I O E x c e p t i o n ;  
+ i m p o r t   j a v a . u t i l . l o g g i n g . L e v e l ;  
+ i m p o r t   j a v a . u t i l . l o g g i n g . L o g g e r ;  
+  
+ / * *  
+   *  
+   *   @ a u t h o r   X i a o  
+   * /  
+ p u b l i c   c l a s s   F i l e W r i t e r T e s t   {  
+          
+         p u b l i c   v o i d   r u n ( ) {  
+                 S t r i n g   b a s e   =   " s r c / W e e k 5 / " ;  
+                  
+                 t r y   {  
+                         F i l e R e a d e r   r e a d e r   =   n e w   F i l e R e a d e r ( b a s e   +   " F i l e W r i t e r T e s t . j a v a " ) ;  
+                         F i l e W r i t e r   w r i t e r   =   n e w   F i l e W r i t e r ( b a s e   +   " F W D u p l i c a t e . t x t " ) ;  
+                          
+                         i n t   i n V a l   =   r e a d e r . r e a d ( ) ;  
+                         w h i l e   ( i n V a l   > =   0 )   {  
+                                 w r i t e r . w r i t e ( "   "   +   ( c h a r )   i n V a l ) ;  
+                                 i n V a l   =   r e a d e r . r e a d ( ) ;  
+                         }  
+                         r e a d e r . c l o s e ( ) ;  
+                         w r i t e r . c l o s e ( ) ;  
+                 }   c a t c h   ( F i l e N o t F o u n d E x c e p t i o n   e x )   {  
+                         e x . p r i n t S t a c k T r a c e ( ) ;  
+                 }   c a t c h   ( I O E x c e p t i o n   e x )   {  
+                         L o g g e r . g e t L o g g e r ( F i l e W r i t e r T e s t . c l a s s . g e t N a m e ( ) ) . l o g ( L e v e l . S E V E R E ,   n u l l ,   e x ) ;  
+                 }  
+         }  
+          
+          
+         p u b l i c   s t a t i c   v o i d   m a i n ( S t r i n g [ ]   a r g s ) {  
+                 F i l e W r i t e r T e s t   f w t   =   n e w   F i l e W r i t e r T e s t ( ) ;  
+                 f w t . r u n ( ) ;  
+         }  
+          
+ }  
